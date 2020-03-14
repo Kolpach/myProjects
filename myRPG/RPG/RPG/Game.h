@@ -14,7 +14,7 @@ private:
 	sf::Clock dtClock;
 	std::stack<IState*> states;
 
-	std::queue<int> supportedKeys;
+	std::vector<int> supportedKeys;
 
 	//initialization functions
 

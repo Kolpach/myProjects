@@ -2,7 +2,7 @@
 
 //Constructor/Destructor
 
-IState::IState(sf::RenderWindow* window, const float& delta,const  std::queue<int>& Keys) : dt(delta), supportedKeys(Keys){
+IState::IState(sf::RenderWindow* window, const float& delta) : dt(delta) {
 	this->window = window;
 	//wantsEnd = false;
 	quit = false;
@@ -16,4 +16,5 @@ IState::~IState() {
 const bool& IState::getQuit() const {
 	return quit;
 }
+
 

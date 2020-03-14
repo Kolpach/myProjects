@@ -30,7 +30,7 @@ void Game::initWindow() {
 }
 
 void Game::initStates() {
-	states.push(new GameState(window, dt, supportedKeys));
+	states.push(new GameState(window, dt));
 }
 
 void Game::initKeys() {
@@ -40,7 +40,7 @@ void Game::initKeys() {
 		while (!ifs.eof()) {
 			int loc = 0;
 			ifs >> loc;
-			supportedKeys.push(loc);
+			supportedKeys.push_back(loc);
 		}
 	}
 	else {
@@ -48,6 +48,7 @@ void Game::initKeys() {
 	}
 
 	ifs.close();
+	states.top()->initInput(supportedKeys);
 }
 
 //Constructor/Destructor

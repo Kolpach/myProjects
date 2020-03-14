@@ -2,6 +2,7 @@
 #define STATE_H
 
 #include "Entity.h"
+#include "setDirCommand.h"
 
 class IState
 {
@@ -12,13 +13,15 @@ protected:
 	sf::RenderWindow* window;
 	bool quit;
 	std::vector<sf::Texture*> texture;
-	const std::queue<int>& supportedKeys;
+	std::map<sf::Keyboard::Key, ICommand* > allowedKeys;
+
 public:
-	IState(sf::RenderWindow* window, const float& delta, const std::queue<int>& Keys);
+	IState(sf::RenderWindow* window, const float& delta);
 	virtual ~IState();
 
 	//functions
 
+	virtual void initInput(const std::vector<int>& supportedKeys) {};
 	//simple getter
 	const bool& getQuit() const;
 

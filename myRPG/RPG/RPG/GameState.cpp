@@ -1,6 +1,7 @@
 #include "GameState.h"
 
-GameState::GameState(sf::RenderWindow* window, const float& delta, const std::queue<int>& supportedKeys) : IState(window, delta, supportedKeys) {
+GameState::GameState(sf::RenderWindow* window, const float& delta) : IState(window, delta) {
+	
 }
 
 GameState::~GameState() {
@@ -22,6 +23,15 @@ void GameState::updateInput() {
 			pairCommand.second->execute();
 		}
 	}
+}
+
+void GameState::initInput(const std::vector<int>& supportedKeys) {
+	allowedKeys = {
+		{static_cast<sf::Keyboard::Key>(supportedKeys[0]), &left},
+		{static_cast<sf::Keyboard::Key>(supportedKeys[1]), &right},
+		{static_cast<sf::Keyboard::Key>(supportedKeys[2]), &up},
+		{static_cast<sf::Keyboard::Key>(supportedKeys[3]), &down},
+	};
 }
 
 void GameState::update() {
