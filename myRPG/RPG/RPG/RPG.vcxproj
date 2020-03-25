@@ -134,6 +134,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="IState.cpp" />
+    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="setDirCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="includeStates.h" />
     <ClInclude Include="IState.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="setDirCommand.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

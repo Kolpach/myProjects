@@ -28,7 +28,7 @@ public:
 	//just before end
 	virtual void endState() = 0;
 	//updates key press events
-	virtual void updateInput() = 0;
+	virtual void handleInput() = 0;
 	virtual void update() = 0;//dt = deltatime
 	virtual void render(sf::RenderTarget* target = nullptr) = 0;
 };

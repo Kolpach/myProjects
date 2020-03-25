@@ -27,6 +27,8 @@ public:
 
 	//Functions
 
+	void handleInput();
+
 	//Regular
 
 	void endApplication();

@@ -14,7 +14,7 @@ void GameState::endState() {
 	quit = true;
 }
 
-void GameState::updateInput() {
+void GameState::handleInput() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
 		endState();
 	}
@@ -35,7 +35,6 @@ void GameState::initInput(const std::vector<int>& supportedKeys) {
 }
 
 void GameState::update() {
-	updateInput();
 	player.update();
 }
 

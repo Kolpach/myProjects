@@ -1,7 +1,5 @@
 #include "Game.h"
 
-
-
 //initialization functions
 
 void Game::initWindow() {
@@ -67,6 +65,10 @@ Game::~Game() {
 	}
 }
 
+void Game::handleInput() {
+	states.top()->handleInput();
+}
+
 //Functions
 
 //just some function, called at the end
@@ -127,6 +129,7 @@ void Game::render() {
 //Runs the main loop
 void Game::run() {
 	while (window->isOpen()) {
+		handleInput();
 		update();
 		render();
 	}

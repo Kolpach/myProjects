@@ -20,7 +20,7 @@ public:
 	virtual void endState();
 
 	//updates key press events
-	virtual void updateInput() override;
+	virtual void handleInput() override;
 	virtual void initInput(const std::vector<int>& supportedKeys) override;
 	virtual void update() override;
 	virtual void render(sf::RenderTarget* target = nullptr) override;
